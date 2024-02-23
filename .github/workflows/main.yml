@@ -59,3 +59,24 @@ jobs:
 
       - name: test project
         run: npm test
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Install Dependencies
+        run: |
+          npm ci
+
+      - name: Deploy to Vercel
+        run: |
+          npx vercel --prod
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
