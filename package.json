@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "jest"
+    "test": "npx jest"
   },
   "dependencies": {
     "vue": "^3.4.15"
