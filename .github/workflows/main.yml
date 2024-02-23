@@ -27,14 +27,14 @@ jobs:
 
   Launch:
     runs-on: ubuntu-latest
-
+    needs: build
     steps:
       - name: Launch project
         run: npm run dev
 
   Preview:
     runs-on: ubuntu-latest
-
+    needs: build
     steps:
       - name: Preview project
         run: npm run preview
