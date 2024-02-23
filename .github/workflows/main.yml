@@ -37,6 +37,8 @@ jobs:
           path: build.zip
       - name: Check current directory
         run: ls
+      - name: test project
+        run: npm test
 
   Test:
     runs-on: ubuntu-latest
