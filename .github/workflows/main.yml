@@ -25,14 +25,14 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Create artifact
-        id: create_artifact
-        run: echo "Some content for the artifact" > artifact.txt
+      - name: Zip build
+        run: zip -r build.zip ./dist
+
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
           name: my-artifact
-          path: artifact.txt
+          path: build.zip
 
   Launch:
     runs-on: ubuntu-latest
@@ -42,8 +42,10 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: my-artifact
-      - name: Step 1 of Launch
-        run: cat my-artifact/artifact.txt
+          path: build
+
+      - name: Extract zip
+        run: unzip build/build.zip -d build
       - name: Launch project
         run: npm run dev
 
@@ -56,8 +58,10 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: my-artifact
-      - name: Step 1 of Preview
-        run: cat my-artifact/artifact.txt
+          path: build
+
+      - name: Extract zip
+        run: unzip build/build.zip -d build
 
       - name: Preview project
         run: npm run preview
