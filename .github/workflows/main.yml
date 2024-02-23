@@ -45,10 +45,9 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: my-artifact
-          path: build
 
       - name: Extract zip
-        run: unzip build.zip -d build
+        run: unzip build.zip
       - name: Launch project
         run: npm run dev
 
@@ -61,10 +60,9 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: my-artifact
-          path: build
 
       - name: Extract zip
-        run: unzip build.zip -d build
+        run: unzip build.zip
 
       - name: Preview project
         run: npm run preview
