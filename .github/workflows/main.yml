@@ -27,7 +27,7 @@ jobs:
       - name: Check current directory
         run: ls
       - name: Zip build
-        run: zip -r build.zip
+        run: zip -r build.zip .
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
