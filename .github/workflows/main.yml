@@ -26,6 +26,7 @@ jobs:
         run: npm run build
       - name: Check current directory
         run: ls
+
       - name: Zip build
         run: zip -r build.zip .
 
@@ -48,6 +49,8 @@ jobs:
 
       - name: Extract zip
         run: unzip build.zip
+      - name: Check current directory
+        run: ls
       - name: Launch project
         run: npm run dev
 
