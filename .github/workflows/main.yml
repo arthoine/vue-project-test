@@ -24,7 +24,8 @@ jobs:
 
       - name: Build project
         run: npm run build
-
+      - name: Check current directory
+        run: ls
       - name: Zip build
         run: zip -r build.zip dist
 
