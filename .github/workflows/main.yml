@@ -25,9 +25,17 @@ jobs:
       - name: Build project
         run: npm run build
 
+  Launch:
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Launch project
         run: npm run dev
 
+  Preview:
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Preview project
         run: npm run preview
 
