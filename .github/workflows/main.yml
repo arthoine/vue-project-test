@@ -24,3 +24,11 @@ jobs:
 
       - name: Build project
         run: npm run build
+
+      - name: Launch project
+        run: npm run dev
+
+      - name: Preview project
+        run: npm run preview
+
+
