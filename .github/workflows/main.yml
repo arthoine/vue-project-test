@@ -60,9 +60,5 @@ jobs:
       - name: Extract zip
         run: unzip build.zip
 
-
-      - name: Check current directory
-        run: npm install
-
       - name: test project
         run: npm test
