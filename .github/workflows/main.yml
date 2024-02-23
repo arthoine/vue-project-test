@@ -56,5 +56,5 @@ jobs:
         run: unzip build.zip
       - name: Check current directory
         run: ls
-      - name: Launch project
+      - name: test project
         run: npm test
